@@ -2,19 +2,277 @@
 <html>
 <head>
     <title>Cinnamon & Sage Café</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to Cinnamon & Sage Café</h1>
-    <p>Enjoy our selection of fine teas and pastries.</p>
+
     <header>
-    <div class="logo">Cinnamon & Sage</div>
-    
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+        <div class="logo">Cinnamon & Sage</div>
+        <nav style="display: flex; align-items: center; gap: 15px;">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#menu">Menu</a>
+            
+            <a href="#cart-section" style="background-color: #708238; color: white; padding: 6px 12px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; font-weight: bold; display: inline-flex; align-items: center; gap: 5px; transition: background 0.3s;" onmouseover="this.style.backgroundColor='#d2b48c'; this.style.color='#2b241e';" onmouseout="this.style.backgroundColor='#708238'; this.style.color='white';">
+                🛒 Shopping Cart
+            </a>
+            
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Cinnamon & Sage</h1>
+            <p>Artisanal Coffee & Cozy Vibes</p>
+            <a href="#menu" class="hero-btn">Explore Menu</a>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2 class="section-title">Our Menu</h2>
+            
+            <h3 class="category-title">Eats</h3>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="card-header">
+                        <h4>Croissant Sandwich</h4>
+                        <span class="price">$6.50</span>
+                    </div>
+                    <p class="description">Smoked ham and mozzarella cheese on a flaky, plain croissant.</p>
+                    <button class="cart-btn" onclick="addToCart('Croissant Sandwich', 6.50)" style="background-color: #708238; color: white; border: none; padding: 6px 12px; margin-top: 10px; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-header">
+                        <h4>Green Omelette</h4>
+                        <span class="price">$15.99</span>
+                    </div>
+                    <p class="description">Open-faced omelette with scallions and parsley. Served with buttered toast, home fries, and a fresh house salad.</p>
+                    <button class="cart-btn" onclick="addToCart('Green Omelette', 15.99)" style="background-color: #708238; color: white; border: none; padding: 6px 12px; margin-top: 10px; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-header">
+                        <h4>Chia Pudding</h4>
+                        <span class="price">$5.00</span>
+                    </div>
+                    <p class="description">Housemade organic chia pudding. Vegan-friendly, prepared with premium almond milk.</p>
+                    <button class="cart-btn" onclick="addToCart('Chia Pudding', 5.00)" style="background-color: #708238; color: white; border: none; padding: 6px 12px; margin-top: 10px; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-header">
+                        <h4>Avocado Toast</h4>
+                        <span class="price">$12.99</span>
+                    </div>
+                    <p class="description">Homemade guacamole topped with crumbled feta cheese and crunchy sunflower seeds on freshly baked multigrain Pullman toast. Served with a house salad.</p>
+                    <button class="cart-btn" onclick="addToCart('Avocado Toast', 12.99)" style="background-color: #708238; color: white; border: none; padding: 6px 12px; margin-top: 10px; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-header">
+                        <h4>Cheese Danish</h4>
+                        <span class="price">$4.25</span>
+                    </div>
+                    <p class="description">Flaky puff pastry with a sweet, creamy cream cheese filling center, dusted with powdered sugar.</p>
+                    <button class="cart-btn" onclick="addToCart('Cheese Danish', 4.25)" style="background-color: #708238; color: white; border: none; padding: 6px 12px; margin-top: 10px; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-header">
+                        <h4>Chocolate Croissant</h4>
+                        <span class="price">$4.75</span>
+                    </div>
+                    <p class="description">Classic buttery, golden Parisian pastry filled with rich, semi-sweet dark chocolate blocks.</p>
+                    <button class="cart-btn" onclick="addToCart('Chocolate Croissant', 4.75)" style="background-color: #708238; color: white; border: none; padding: 6px 12px; margin-top: 10px; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-header">
+                        <h4>Assorted Muffins</h4>
+                        <span class="price">$3.75</span>
+                    </div>
+                    <p class="description">Baked fresh daily. Choice of Wild Blueberry Crumble, Double Chocolate Chip, or Banana Nut.</p>
+                    <button class="cart-btn" onclick="addToCart('Assorted Muffins', 3.75)" style="background-color: #708238; color: white; border: none; padding: 6px 12px; margin-top: 10px; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-header">
+                        <h4>Fudge Brownie</h4>
+                        <span class="price">$4.00</span>
+                    </div>
+                    <p class="description">Rich, dense chocolate fudge brownie with a crackly top crusted surface. Served warm.</p>
+                    <button class="cart-btn" onclick="addToCart('Fudge Brownie', 4.00)" style="background-color: #708238; color: white; border: none; padding: 6px 12px; margin-top: 10px; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+                </div>
+            </div> 
+
+            <h3 class="category-title">Brews</h3>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="card-header">
+                        <h4>Single Origin Coffee</h4>
+                        <span class="price">$3.50</span>
+                    </div>
+                    <p class="description">Premium single-origin filter coffee with rotating bean options.</p>
+                    <button class="cart-btn" onclick="addToCart('Single Origin Coffee', 3.50)" style="background-color: #708238; color: white; border: none; padding: 6px 12px; margin-top: 10px; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-header">
+                        <h4>Americano</h4>
+                        <span class="price">$3.75</span>
+                    </div>
+                    <p class="description">Rich espresso shots extended with hot water for a smooth finish.</p>
+                    <button class="cart-btn" onclick="addToCart('Americano', 3.75)" style="background-color: #708238; color: white; border: none; padding: 6px 12px; margin-top: 10px; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-header">
+                        <h4>Espresso</h4>
+                        <span class="price">$3.50</span>
+                    </div>
+                    <p class="description">A concentrated, full-bodied double shot of our signature house blend.</p>
+                    <button class="cart-btn" onclick="addToCart('Espresso', 3.50)" style="background-color: #708238; color: white; border: none; padding: 6px 12px; margin-top: 10px; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-header">
+                        <h4>Caffè Mocha</h4>
+                        <span class="price">$5.50</span>
+                    </div>
+                    <p class="description">Espresso mixed with artisanal dark chocolate and steamed milk.</p>
+                    <button class="cart-btn" onclick="addToCart('Caffè Mocha', 5.50)" style="background-color: #708238; color: white; border: none; padding: 6px 12px; margin-top: 10px; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-header">
+                        <h4>Matcha Latte</h4>
+                        <span class="price">$6.00</span>
+                    </div>
+                    <p class="description">Pure, stone-ground Japanese matcha whisked and paired with velvety steamed milk.</p>
+                    <button class="cart-btn" onclick="addToCart('Matcha Latte', 6.00)" style="background-color: #708238; color: white; border: none; padding: 6px 12px; margin-top: 10px; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-header">
+                        <h4>Chai / Turmeric Latte</h4>
+                        <span class="price">$5.00</span>
+                    </div>
+                    <p class="description">Your choice of aromatic spiced black tea chai or warming anti-inflammatory turmeric milk blend.</p>
+                    <button class="cart-btn" onclick="addToCart('Chai / Turmeric Latte', 5.00)" style="background-color: #708238; color: white; border: none; padding: 6px 12px; margin-top: 10px; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+                </div>
+            </div> 
+        </div>
+    </section>
+
+    <section id="about" style="text-align: center; padding: 40px 20px;">
+        <h2 class="section-title">Take a Look Inside</h2>
+        
+        <div style="max-width: 580px; margin: 0 auto; position: relative;">
+            <div id="sliderBox" style="display: flex; overflow-x: hidden; scroll-behavior: smooth; gap: 15px; width: 480px; height: 375px; margin: 0 auto;">
+                <img src="cute cafe.jpg" alt="Cafe" style="width: 480px; height: 375px; object-fit: cover; flex-shrink: 0;">
+                <img src="matcha.webp" alt="Latte" style="width: 480px; height: 375px; object-fit: cover; flex-shrink: 0;">
+                <img src="green egg.jfif" alt="Food" style="width: 480px; height: 375px; object-fit: cover; flex-shrink: 0;">
+                <img src="Ham and Cheese.avif" alt="Food" style="width: 480px; height: 375px; object-fit: cover; flex-shrink: 0;">
+                <img src="toast.jfif" alt="Food" style="width: 480px; height: 375px; object-fit: cover; flex-shrink: 0;">
+                <img src="cheese-danish-served.jpg" alt="Food" style="width: 480px; height: 375px; object-fit: cover; flex-shrink: 0;">
+                <img src="muffin.jfif" alt="Food" style="width: 480px; height: 375px; object-fit: cover; flex-shrink: 0;">
+            </div>
+            <button style="position: absolute; top: 50%; transform: translateY(-50%); left: 0px; background-color: #708238; color: white; border: none; font-size: 1.2rem; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;" onclick="document.getElementById('sliderBox').scrollBy({left: -495, behavior: 'smooth'})">❮</button>
+            <button style="position: absolute; top: 50%; transform: translateY(-50%); right: 0px; background-color: #708238; color: white; border: none; font-size: 1.2rem; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;" onclick="document.getElementById('sliderBox').scrollBy({left: 495, behavior: 'smooth'})">❯</button>
+        </div>
+    </section>
+
+    <section style="max-width: 600px; margin: 0 auto; text-align: center; padding: 60px 20px;">
+        <h2 class="section-title" style="margin-bottom: 20px;">The Big Dream</h2>
+        <p class="about-text" style="font-size: 1.1rem; line-height: 1.6; color: #443322;">
+            Okay, so full disclosure: Cinnamon & Sage doesn’t actually exist yet. This website is basically a mood board for a huge dream of mine. I want to open a low-key, book-themed coffee shop that flips into a cozy bar at night. The goal is to build a space filled with bookshelves where you can study with a matcha latte and a pastry during the day, and then wind down with a drink and good music later on. I'm using this site to map out exactly what that vibe will look like one day, and I'm so excited to eventually make it happen.
+        </p>
+    </section>
+
+    <section id="cart-section" style="max-width: 600px; margin: 40px auto; padding: 20px; border: 1px solid #cbbba0; border-radius: 10px; background-color: #fcfaf2; font-family: sans-serif; scroll-margin-top: 100px;"> <h2 style="color: #332211; border-bottom: 2px solid #708238; padding-bottom: 10px; margin-top: 0;">Your Shopping Cart</h2>
+        
+        <ul id="cart-items" style="list-style-type: none; padding: 0; margin: 0; min-height: 50px;">
+            <li style="color: #887766; font-style: italic; padding: 10px 0;">Your cart is currently empty. Pick some pastries or brews!</li>
+        </ul>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cbbba0; padding-top: 15px; margin-top: 15px; font-weight: bold; font-size: 1.1rem; color: #443322;">
+            <div>Total: $<span id="cart-total">0.00</span></div>
+            <div>
+                <button onclick="clearCart()" style="background-color: #ba4a4a; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; margin-right: 10px; font-weight: bold;">Clear Cart</button>
+                
+                <button onclick="alert('Order received! Thank you for supporting the dream.'); clearCart();" style="background-color: #708238; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold;">Checkout</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="max-width: 900px; margin: 0 auto; padding: 60px 20px;">
+        <h2 style="text-align: center; margin-bottom: 10px;" class="section-title">Get in Touch</h2>
+        <p style="text-align: center; margin-bottom: 40px; color: #665544;">Have any book recommendations or want to collaborate on the dream? Drop a line below!</p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+            <div style="flex: 1; min-width: 300px; max-width: 450px;">
+                <h3 style="margin-bottom: 15px; color: #332211;">Future Location</h3>
+                <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); height: 350px;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12m3!1d193595.25280821815!2d-74.11976374305885!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1718600000000!5m2!1sen!2sus" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <div style="flex: 1; min-width: 300px; max-width: 450px;">
+                <h3 style="margin-bottom: 15px; color: #332211;">Send a Message</h3>
+                <form style="display: flex; flex-direction: column; gap: 15px;">
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #443322;">Name</label>
+                        <input type="text" placeholder="Your Name" required style="width: 100%; padding: 10px; border: 1px solid #cbbba0; border-radius: 5px; box-sizing: border-box;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #443322;">Email</label>
+                        <input type="email" placeholder="yourname@email.com" required style="width: 100%; padding: 10px; border: 1px solid #cbbba0; border-radius: 5px; box-sizing: border-box;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #443322;">Message</label>
+                        <textarea rows="5" placeholder="Tell us what books or drinks we should feature..." required style="width: 100%; padding: 10px; border: 1px solid #cbbba0; border-radius: 5px; box-sizing: border-box; resize: vertical; font-family: inherit;"></textarea>
+                    </div>
+                    <button type="submit" style="background-color: #708238; color: white; border: none; padding: 12px; font-size: 1rem; font-weight: bold; border-radius: 5px; cursor: pointer; transition: background 0.3s;" onmouseover="this.style.backgroundColor='#d2b48c'" onmouseout="this.style.backgroundColor='#708238'">
+                        Submit Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background-color: #2b241e; color: #ebdcb9; padding: 40px 20px; text-align: center;">
+        <div class="social-media" style="margin-bottom: 20px;">
+            <p style="margin-bottom: 8px; font-weight: bold; font-size: 0.95rem; color: #ffffff; opacity: 0.9;">Follow Our Journey</p>
+            <a href="login.html" style="color: #ebdcb9; margin: 0 10px; text-decoration: none; font-size: 0.9rem;" onmouseover="this.style.color='#708238'" onmouseout="this.style.color='#ebdcb9'">Facebook</a>
+            <a href="login.html" style="color: #ebdcb9; margin: 0 10px; text-decoration: none; font-size: 0.9rem;" onmouseover="this.style.color='#708238'" onmouseout="this.style.color='#ebdcb9'">Instagram</a>
+            <a href="login.html" style="color: #ebdcb9; margin: 0 10px; text-decoration: none; font-size: 0.9rem;" onmouseover="this.style.color='#708238'" onmouseout="this.style.color='#ebdcb9'">Twitter</a>
+        </div>
+
+        <div class="business-hours" style="margin-bottom: 20px; font-size: 0.9rem; line-height: 1.6;">
+            <p style="margin-bottom: 4px; font-weight: bold; font-size: 0.95rem; color: #ffffff; opacity: 0.9;">Hours</p>
+            <p style="margin: 0;">Weekdays: 7:00 AM – 12:00 AM</p>
+            <p style="margin: 0;">Weekends: 7:00 AM – 2:00 AM</p>
+        </div>
+
+        <div class="contact-info" style="font-size: 0.85rem; opacity: 0.8; line-height: 1.5; border-top: 1px solid rgba(235, 220, 185, 0.2); padding-top: 20px; max-width: 400px; margin: 0 auto;">
+            <p style="margin: 0 0 5px 0;">Email: info@cinnamonandsage.com</p>
+            <p style="margin: 0 0 15px 0;">Phone: (123) 456-7890</p>
+            <p style="margin: 0; font-size: 0.8rem;">© 2026 Cinnamon & Sage Café</p>
+        </div>
+    </footer>
+
+   <script src="script.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,240 @@
+/* 1. Global Reset & Base Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Header Container (The Sage Green Background) */
+header {
+    background-color: #9CAF88; /* Deep, rich Sage Green */
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a soft shadow underneath */
+}
+
+/* The Logo Text (Warm Beige) */
+.logo {
+    color: #f5f2eb; /* Soft Warm Beige / Cream */
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* 3. The Navigation Links (The "Tab / Bubble" Styling) */
+nav a {
+    color: #f5f2eb;            /* Warm Beige text color */
+    text-decoration: none;     /* Removes the underline */
+    font-weight: 600;
+    font-size: 1rem;
+    margin-left: 15px;
+    
+    /* Creating the "Bubble" shape around the text */
+    padding: 10px 20px;        /* Spacing inside the bubble (top/bottom, left/right) */
+    background-color: #8fa88f; /* Muted Seafoam/Sage Green for the bubble */
+    border-radius: 20px;       /* This rounds the corners completely into a pill/bubble shape! */
+    
+    /* Animation transition for the hover effect */
+    transition: all 0.3s ease; 
+}
+
+/* 4. The Hover Effect (What happens when your mouse touches a link) */
+nav a:hover {
+    background-color: #d2b48c; /* Changes the bubble background to a warm Cinnamon Brown */
+    color: #332211;            /* Darkens the text color slightly for contrast */
+    transform: translateY(-2px); /* Makes the bubble lift up slightly like a button */
+}
+
+/* ==========================================
+   2. HERO SECTION STYLING
+   ========================================== */
+.hero-section {
+    /* This adds a dark tint over a beautiful, free coffee shop image so your white text is easy to read */
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+                url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1600') no-repeat center center/cover;
+    
+    height: 100vh;        /* Forces the banner to fill the entire height of the screen */
+    display: flex;        /* Centers everything inside the banner perfectly */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    
+    /* Crucial: This pushes the banner down so it doesn't get hidden behind your fixed header bar */
+    padding-top: 80px; 
+}
+
+/* Big Café Title inside Hero */
+.hero-content h1 {
+    font-size: 4rem;      /* Extra large font size */
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a shadow behind text so it pops */
+}
+
+/* Subtitle description */
+.hero-content p {
+    font-size: 1.8rem;
+    margin-bottom: 35px;
+    font-weight: 300;
+    color: #f5f2eb;      /* Matches your warm beige/cream color */
+}
+
+/* The Call-to-Action Button ("Explore Menu") */
+.hero-btn {
+    display: inline-block;
+    padding: 14px 35px;
+    background-color: #d2b48c; /* Warm cinnamon/tan color */
+    color: #2e3b2e;            /* Deep dark green text for readability */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 30px;       /* Keeps that bubble theme going! */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Hover animation for the hero button */
+.hero-btn:hover {
+    background-color: #f5f2eb; /* Flips to warm cream when hovered */
+    color: #708238;            /* Text switches to your sage green */
+    transform: scale(1.05);    /* Slightly pops out at the user */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* 3. FOOTER STYLING*/
+footer {
+    background-color: #f5f2eb; /* Warm beige background */
+    padding: 40px 20px;
+    text-align: center;
+    color: #2e3b2e;            /* Deep dark green text */
+}
+
+.social-media a {
+    color: #708238;            /* Sage green links */
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.social-media a:hover {
+    color: #d2b48c;            /* Cinnamon color on hover */
+}
+
+.contact-info p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   4. MENU SECTION STYLING
+   ========================================== */
+.menu-section {
+    background-color: #fcfbfa; /* Off-white canvas background */
+    padding: 80px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #708238; /* Sage Green */
+    margin-bottom: 40px;
+    font-family: Georgia, serif;
+}
+
+.category-title {
+    font-size: 1.8rem;
+    color: #332211;
+    border-bottom: 2px solid #d2b48c; /* Cinnamon underline separator */
+    padding-bottom: 5px;
+    margin: 40px 0 20px 0;
+}
+
+/* --- THE GRID LAYOUT --- */
+.menu-grid {
+    display: grid;
+    /* Automatically creates columns that wrap neatly based on the screen size */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; /* Spacing between the cards */
+}
+
+/* --- THE MENU CARD CHASSIS --- */
+.menu-card {
+    background-color: #ffffff;
+    border-radius: 15px; /* Soft rounded corners matching your buttons */
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Very soft shadow */
+    border-left: 5px solid #8fa88f; /* Decorative seafoam green strip on the left */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Card subtle hover interactive pop */
+.menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    border-left-color: #d2b48c; /* Changes strip to cinnamon brown on hover! */
+}
+
+/* Layout for title and price inside the card */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.card-header h4 {
+    font-size: 1.2rem;
+    color: #2e3b2e; /* Dark sage tone */
+    font-weight: 600;
+}
+
+.price {
+    font-weight: bold;
+    color: #708238; /* Sage Green for price tags */
+    font-size: 1.1rem;
+    background-color: #f5f2eb; /* Tiny background bubble for price */
+    padding: 3px 10px;
+    border-radius: 10px;
+}
+
+/* The item description style */
+.description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* SLIDER*/
+.minimal-slider {
+    display: flex;
+    overflow-x: hidden;       /* Hides the scrollbar */
+    scroll-behavior: smooth;
+    gap: 20px;
+    width: 320px;             /* Forcing a strict width */
+    height: 250px;            /* Forcing a strict height so it cannot collapse */
+    background-color: #ebdcb9; /* A temporary warm tan color so you can physically see the box area! */
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.minimal-slider img {
+    width: 320px;
+    height: 250px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
